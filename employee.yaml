@@ -1,0 +1,104 @@
+apiVersion: digital-employee/v1
+kind: DigitalEmployee
+metadata:
+  id: de_local_private_repeat_buyer_manager
+  name: 私域复购管家
+  alias: null
+  repo: de-local-private-repeat-buyer-manager
+  card_no: 7.4.4 ③
+  group: local
+  group_label: 本地生活服务商家
+  phase: '**P0 首发**（粘性最强资产，续费驱动）'
+  complexity: M
+  score: 22
+  price: 100–300 元/月（SCRM 入门版 3980 元/年已被市场验证，据 R4 调研）；**代配置服务加成：500–1000 元/次**（企微开通代办+历史客户导入打标+首月内容陪跑——这是本群体数字化门槛最高的环节，代配置几乎是必选项）
+  channels:
+  - GitHub（必备）
+  - '**小红书**（私域教程类笔记流量大）'
+  - 腾讯 WorkBuddy Skill 市场（企微生态天然契合）
+  - 千问办公
+  license: Proprietary
+  version: 1.0.0
+spec:
+  positioning: 让 80% 沉睡私域重新到店的"AI 店长助理"
+  users: 已沉淀微信私域但不会运营的门店（68% 运营能力断层，据 R4 调研）
+  boundary: '**做**：入群欢迎、标签分层建议、朋友圈/社群内容日更、优惠券触达文案；**不做**：不自动加好友、不群发轰炸（防封号红线）、不承诺转化率'
+  kpi: 私域内容日更率 100%；沉睡客户唤醒到店率 ≥5%；社群月均活动 ≥4 次
+  roi_summary: 人工 1 人最多管 200 客户（据 R4 调研），AI 辅助下管 1000+；唤醒 5% 沉睡客户即可覆盖年费
+  demand_refs:
+  - D21
+  - D26
+  - D07
+  demand_support: 充分
+  demand_evidence: 中
+runtime:
+  system_prompt: persona/system-prompt.md
+  boundary: persona/boundary.md
+  kpi: persona/kpi.md
+deliverables:
+  skills:
+  - slug: account-ban-risk-guard
+    name: 封号合规风控
+    kind: private
+    path: skills/account-ban-risk-guard
+    version: 1.0.0
+    maturity: contract-complete
+  - slug: community-sop-library
+    name: 社群 SOP 模板库
+    kind: private
+    path: skills/community-sop-library
+    version: 1.0.0
+    maturity: contract-complete
+  - slug: wecom-connect
+    name: 企微 SCRM 对接
+    kind: private
+    path: skills/wecom-connect
+    version: 1.0.0
+    maturity: implemented
+  workflows:
+  - slug: wf-local-private-join-tag
+    name: 入群欢迎与打标
+    path: workflows/wf-local-private-join-tag
+    version: 1.0.0
+    phase: P0
+    calls:
+    - wecom-connect
+  - slug: wf-local-private-moments
+    name: 每日朋友圈文案
+    path: workflows/wf-local-private-moments
+    version: 1.0.0
+    phase: P0
+    calls:
+    - moments-copy-writer
+  - slug: wf-local-private-sop
+    name: 社群话题/活动 SOP
+    path: workflows/wf-local-private-sop
+    version: 1.0.0
+    phase: P0
+    calls:
+    - community-sop-library
+  - slug: wf-local-private-wakeup
+    name: 沉睡客户唤醒
+    path: workflows/wf-local-private-wakeup
+    version: 1.0.0
+    phase: P1
+    calls:
+    - coupon-strategy
+  - slug: wf-local-private-verify
+    name: 到店核销引导
+    path: workflows/wf-local-private-verify
+    version: 1.0.0
+    phase: P1
+    calls:
+    - coupon-strategy
+    - wecom-connect
+  knowledge_base: kb/
+  connectors: connectors/bindings.yaml
+external_dependencies:
+- repo: agent-skills-core
+  version: 1.0.0
+  skills:
+  - coupon-strategy
+  - moments-copy-writer
+  resolution: external
+spec_only_dependencies: []
