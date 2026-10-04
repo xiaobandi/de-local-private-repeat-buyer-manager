@@ -1,0 +1,15 @@
+{
+  "name": "wf-local-private-moments",
+  "title": "每日朋友圈文案",
+  "kind": "workflow",
+  "owner": "de-local-private-repeat-buyer-manager",
+  "complexity": "S",
+  "phase": "P0",
+  "one_liner": "结合当日菜品/天气/热点 → 生成\"像人话\"的朋友圈",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}

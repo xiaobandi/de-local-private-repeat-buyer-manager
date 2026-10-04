@@ -1,0 +1,15 @@
+{
+  "name": "wf-local-private-verify",
+  "title": "到店核销引导",
+  "kind": "workflow",
+  "owner": "de-local-private-repeat-buyer-manager",
+  "complexity": "M",
+  "phase": "P1",
+  "one_liner": "提醒话术+预约入口推送",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}

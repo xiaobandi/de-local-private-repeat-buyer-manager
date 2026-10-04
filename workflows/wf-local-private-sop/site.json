@@ -1,0 +1,15 @@
+{
+  "name": "wf-local-private-sop",
+  "title": "社群话题/活动 SOP",
+  "kind": "workflow",
+  "owner": "de-local-private-repeat-buyer-manager",
+  "complexity": "S",
+  "phase": "P0",
+  "one_liner": "按行业模板生成本周社群互动话题与活动方案",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}

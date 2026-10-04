@@ -1,46 +1,60 @@
 ---
-name: wf-local-private-sop
+name: wf-local-private-moments
 description: >-
-  私域复购管家 的「社群话题/活动 SOP」工作流：按行业模板生成本周社群互动话题与活动方案。触发方式：定时（每周一推送本周 SOP）。
-  当用户要完成「社群话题/活动 SOP」这件事、或触发了上述条件时使用。
+  私域复购管家 的「每日朋友圈文案」工作流：结合当日菜品/天气/热点 → 生成"像人话"的朋友圈。触发方式：定时（每日 7:30 推送 3 条候选）。
+  当用户要完成「每日朋友圈文案」这件事、或触发了上述条件时使用。
 license: Proprietary
+compatibility: >-
+  需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
+  跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
 metadata:
   author: PLATFORM
   version: "1.0.0"
   standard: agent-skills/v1
+  library: agent-skills-library
   layer: L2-workflow
   owner: de_local_private_repeat_buyer_manager
+  repo: de-local-private-repeat-buyer-manager
+  visibility: private_to_employee
+  delivery: employee
   complexity: S
   phase: P0
   source: library
 ---
 
-# 社群话题/活动 SOP
+# 每日朋友圈文案
 
-> 归属：**私域复购管家**（`de-local-private-repeat-buyer-manager`）　触发：定时（每周一推送本周 SOP）　
+> 归属：**私域复购管家**（`de-local-private-repeat-buyer-manager`）　触发：定时（每日 7:30 推送 3 条候选）　
 > 复杂度 S　阶段 P0
 
 ## 一、这条工作流解决什么
 
-按行业模板生成本周社群互动话题与活动方案
+结合当日菜品/天气/热点 → 生成"像人话"的朋友圈
 
-**业务收益**：替代代运营社群服务（2000 元/月档）
+**业务收益**：解决"每天发什么"枯竭痛点，月省 10 小时+
 
 ## 二、调用的 SKILL（必填列，逐条锁定版本）
 
 | 技能名 | slug | 来源仓 | 版本 |
 |---|---|---|---|
-| `社群 SOP 模板库` | `community-sop-library` | 本仓 | v1.0.0 |
+| `朋友圈文案生成` | `moments-copy-writer` | core | v1.0.0 |
 
 > 公共技能来自 `agent-skills-core@1.0.0`，本仓库只做外部依赖引用，
 > **不内联复制**其正文——这是三层仓库体系的硬规则，避免同一能力多份副本各自漂移。
 
 ## 三、执行步骤（每步四要素齐备）
 
-### 步骤 1：按行业模板生成本周社群互动话题与活动方案
+### 步骤 1：结合当日菜品/天气/热点
 
-- **做**：按行业模板生成本周社群互动话题与活动方案
+- **做**：结合当日菜品/天气/热点
 - **输入来源**：用户提供的原始材料（工作流第 1 步没有「上一步」）/ 本员工知识库 `kb/` / 连接器只读数据；三者皆空时必须停在 G1 闸门
+- **依据与结论**：把本步结论对应到具体输入项
+- **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
+
+### 步骤 2：生成"像人话"的朋友圈
+
+- **做**：生成"像人话"的朋友圈
+- **输入来源**：步骤 1 的产出 / 本员工知识库 `kb/` / 连接器只读数据
 - **依据与结论**：把本步结论对应到具体输入项
 - **未决 · 待填**：缺数据处写 `<待填>` 并给出获取方式
 

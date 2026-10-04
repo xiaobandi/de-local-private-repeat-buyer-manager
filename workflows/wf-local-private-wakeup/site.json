@@ -1,0 +1,15 @@
+{
+  "name": "wf-local-private-wakeup",
+  "title": "沉睡客户唤醒",
+  "kind": "workflow",
+  "owner": "de-local-private-repeat-buyer-manager",
+  "complexity": "M（需消费数据）",
+  "phase": "P1",
+  "one_liner": "识别 30 天未互动客户 → 分层唤醒话术+券建议",
+  "pages": [
+    "docs/使用手册.html",
+    "docs/使用示例.html",
+    "docs/用户场景.html",
+    "docs/架构与流程图.html"
+  ]
+}
