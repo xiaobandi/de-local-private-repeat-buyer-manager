@@ -5,6 +5,12 @@
 > **7.4.4 ③**　·　本地生活服务商家　·　阶段 **P0 首发**（粘性最强资产，续费驱动）　·　
 > 复杂度 M　·　100–300 元/月（SCRM 入门版 3980 元/年已被市场验证，据 R4 调研）；**代配置服务加成：500–1000 元/次**（企微开通代办+历史客户导入打标+首月内容陪跑——这是本群体数字化门槛最高的环节，代配置几乎是必选项）　·　定义卡 7.4.4 ③
 
+## 演示（真实执行录播）
+
+![演示](workflows/wf-local-private-moments/docs/images/08-demo-run.gif)
+
+*真实执行回放（GIF 自动循环，非摆拍）· [▶ 观看完整版 MP4](workflows/wf-local-private-moments/docs/images/08-demo-run.mp4) · 台账见 [`reports/real-run/wf-local-private-moments.md`](reports/real-run/wf-local-private-moments.md)*
+
 ![架构](docs/images/architecture.svg)
 
 ## 效果（真实执行）
@@ -58,6 +64,7 @@ python3 tests/run.py            # 先跑一遍自检，确认环境与契约都�
 
 ```text
 de-local-private-repeat-buyer-manager/
+├── employee.md            # 人读定义卡（12 主字段 + 2 扩展组，由 employee.yaml 生成）
 ├── employee.yaml          # 机器契约（能力清单 + 依赖锁）
 ├── dependencies.yaml      # 对 core 的外部依赖（含版本）
 ├── persona/               # 运行提示词 / 边界 / KPI
