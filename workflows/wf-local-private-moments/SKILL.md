@@ -3,7 +3,7 @@ name: wf-local-private-moments
 description: >-
   私域复购管家 的「每日朋友圈文案」工作流：结合当日菜品/天气/热点 → 生成"像人话"的朋友圈。触发方式：定时（每日 7:30 推送 3 条候选）。
   当用户要完成「每日朋友圈文案」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。

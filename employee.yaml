@@ -17,7 +17,7 @@ metadata:
   - '**小红书**（私域教程类笔记流量大）'
   - 腾讯 WorkBuddy Skill 市场（企微生态天然契合）
   - 千问办公
-  license: Proprietary
+  license: Apache-2.0
   version: 1.0.0
 spec:
   positioning: 让 80% 沉睡私域重新到店的"AI 店长助理"

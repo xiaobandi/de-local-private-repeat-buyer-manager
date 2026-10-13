@@ -3,7 +3,7 @@ name: wf-local-private-wakeup
 description: >-
   私域复购管家 的「沉睡客户唤醒」工作流：识别 30 天未互动客户 → 分层唤醒话术+券建议。触发方式：定时（每周扫描）。
   当用户要完成「沉睡客户唤醒」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。

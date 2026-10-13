@@ -3,7 +3,7 @@ name: wf-local-private-verify
 description: >-
   私域复购管家 的「到店核销引导」工作流：提醒话术+预约入口推送。触发方式：事件（领券后 48h 未到店）。
   当用户要完成「到店核销引导」这件事、或触发了上述条件时使用。
-license: Proprietary
+license: Apache-2.0
 compatibility: >-
   需要能读取工作区文件；若环境支持执行代码，将额外启用 scripts/ 下的确定性脚本路径。
   跨 WorkBuddy / ChatGPT / DeepSeek Harness / Kimi Work / 豆包工作。
